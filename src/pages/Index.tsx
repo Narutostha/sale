@@ -1,13 +1,27 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import React from "react";
+import Header from "@/components/layout/Header";
+import FlashSaleSection from "@/components/products/FlashSaleSection";
+import PromotionsSection from "@/components/products/PromotionsSection";
+import { flashSaleProducts } from "@/data/products";
+import { promotions } from "@/data/promotions";
 
-const Index = () => {
+const Index: React.FC = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
+    <>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800&family=Sen:wght@700&family=Inter:wght@400;500;700&display=swap"
+        rel="stylesheet"
+      />
+      <div className="max-w-[1440px] w-full mx-auto my-0 max-md:max-w-[991px] max-sm:max-w-screen-sm">
+        <Header />
+        <main>
+          <div className="px-[100px] py-10 max-md:px-8 max-sm:px-4">
+            <FlashSaleSection products={flashSaleProducts} />
+            <PromotionsSection promotions={promotions} />
+          </div>
+        </main>
       </div>
-    </div>
+    </>
   );
 };
 
